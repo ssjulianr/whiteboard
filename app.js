@@ -1,9 +1,16 @@
+//JS Whiteboard (Julian Robinson, April 19th 2023)
+
+
 //Problem 8
 
 const str = 'S A I N T E D';
 const allSpacesRemoved = str.replaceAll(' ', '');
 
 console.log(allSpacesRemoved);
+
+
+
+
 
 
 
@@ -15,29 +22,20 @@ function booleanNum(num){
 
 console.log(booleanNum(25))
 
+
+
+
+
+
 //Probem 10
 
-const vowels = ["a", "e", "i", "o", "u"]
+function getVowels(str){
+    //Intializes the count
+    let vowelsCount = 0;
 
-function countVowel(str){
-    //initialize count 
-    let count = 0;
-
-    //loop to test if each character is a vowel 
-    for (let letter of str.toLowerCase()){
-        if (vowels.includes(letter)){
-            count++;
-        }
-    }
-    //returns the number of vowels 
-    return count
-
-
+    const regex = /[aeiou]/gi;
+    vowelsCount = str.match(regex);
+    return vowelsCount ? vowelsCount.length : 0;
 }
 
-//Prompt string input 
-const string = prompt('Enter a string: ');
-
-const result = countVowel(string);
-
-console.log(result);
+console.log(getVowels("I'm the greatest coder ever"))
